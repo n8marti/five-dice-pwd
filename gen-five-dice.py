@@ -11,9 +11,27 @@ import random
 import sys
 from pathlib import Path
 
+about = f"""Usage: {sys.argv[0]} [integer]
+
+This script generates a multi-word passphrase.
+- It simulates rolling 5 dice by generating a random 5-digit number.
+- It searches the accompanying EFF Large Wordlist to find the word that corresponds to that number.
+
+The optional integer argument sets the length of the output phrase in words.
+It defaults to 5 words if no arguments are given.
+
+$ {sys.argv[0]} 4
+Simulated dice rolls: 15634-52346-31614-42346
+Password string: citation-rocket-gag-obsession
+"""
+
 length = 5
 if len(sys.argv) > 1:
-    length = int(sys.argv[1])
+    if sys.argv[1] in ['help', '--help', '-h']:
+        print(about)
+        exit()
+    else:
+        length = int(sys.argv[1])
 
 def get_digit():
     # Return a single digit from 1 to 6.
