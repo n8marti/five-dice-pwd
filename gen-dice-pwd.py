@@ -34,22 +34,30 @@ if len(sys.argv) > 1:
         length = int(sys.argv[1])
 
 def get_digit():
-    # Return a single digit from 1 to 6.
+    """
+    Return a single digit from 1 to 6.
+    """
     digit = str(random.randint(1, 6))
     return digit
 
 def get_dice_roll():
-    # Return string of 5 digits from 1 to 5.
+    """
+    Return string of 5 digits from 1 to 5.
+    """
     combo = [str(get_digit()) for i in range(5)]
     return ''.join(combo)
 
 def get_roll_series(quantity):
-    # Return list of 5 dice rolls of 5 dice each.
+    """
+    Return list of 5 dice rolls of 5 dice each.
+    """
     rolls = [get_dice_roll() for i in range(quantity)]
     return rolls
 
 def get_word_from_roll(word_dict, roll):
-    # Return word that corresponds to dice roll.
+    """
+    Return word that corresponds to dice roll.
+    """
     if roll in word_dict.keys():
         return word_dict[roll]
 
