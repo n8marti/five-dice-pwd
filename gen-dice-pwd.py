@@ -53,7 +53,7 @@ def get_word_from_roll(word_dict, roll):
     if roll in word_dict.keys():
         return word_dict[roll]
 
-parent_dir = Path(sys.argv[0]).resolve().parents[0]
+parent_dir = Path(sys.argv[0]).resolve().parent
 infile = parent_dir / 'passwords_eff_large_wordlist.txt'
 
 with open(infile, 'r') as f:
