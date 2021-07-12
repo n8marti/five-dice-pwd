@@ -18,7 +18,7 @@ This script generates a multi-word passphrase.
 - It searches the accompanying EFF Large Wordlist to find the word that corresponds to that number.
 
 The optional integer argument sets the length of the output phrase in words.
-It defaults to 5 words if no arguments are given.
+It defaults to 5 words if no arguments are given. Eg.:
 
 $ {sys.argv[0]} 4
 Simulated dice rolls: 15634-52346-31614-42346
